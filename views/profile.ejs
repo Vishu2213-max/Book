@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Brainstorm Paradise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .btn-logout {
+            background-color: #ff0000; /* Red color */
+            color: #ffffff; /* White text color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .btn-logout:hover {
+            background-color: #cc0000; /* Darker red color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/images/brainstorm_logo.png" alt="Brainstorm Paradise Logo" class="logo-img">
+            <h1 class="logo-title">Brainstorm Paradise</h1>
+        </div>
+    </header>
+
+    <main class="profile-cover">
+        <div class="profile-info">
+            <div class="profile-text">
+                <h2>Welcome!</h2>
+                <p> <%= user.username %></p>
+                <p><i class="fa-solid fa-envelope"></i> Email: <%= user.email %></p>
+                <p><i class="fa-solid fa-phone"></i> Phone: <%= user.ph %></p>
+                <a href="/" class="btn btn-home">Go to Home</a>
+                <a href="/auth/logout" class="btn btn-home btn-logout">Logout</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Brainstorm Paradise</p>
+    </footer>
+
+    <script src="/javascripts/main.js"></script>
+</body>
+
+</html>

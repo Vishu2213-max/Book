@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= book.title %> - Brainstorm Paradise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        .book-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #010000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.book-info p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #140202;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.book-info p:first-of-type {
+  font-weight: bold;
+  color: #031a2e;
+}
+
+.book-info p:last-of-type {
+    font-weight: bold;
+  font-style: italic;
+  color: #120a0a;
+}
+.disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.btn.disabled {
+  border-color: #ccc;
+}
+
+.btn.disabled:hover {
+  background-color: #ccc;
+  color: #666;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/images/brainstorm_logo.png" alt="Brainstorm Paradise Logo" class="logo-img">
+            <h1 class="logo-title">Brainstorm Paradise</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/books/all">Books</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2><%= book.title %></h2>
+        <div class="book-details">
+            <img src="/images/<%= book.image %>" alt="<%= book.title %>" class="book-cover">
+            <div class="book-info">
+                <h3>by <%= book.author %></h3>
+                <p>Price: $<%= book.price %></p>
+                <p>Description: <%= book.description %></p>
+                <% if (locals.message) { %>
+                  <a href="#" class="btn disabled" onclick="alert('Book is already in cart')">Add to Cart</a>
+                <% } else { %>
+                  <a href="/cart/add/<%= book.id %>" class="btn">Add to Cart</a>
+                <% } %>
+            </div>
+        </div>
+    </main>
+    <a href="/" class="btn btn-home">Go to Home</a>
+    <footer>
+        <p>&copy; 2023 Brainstorm Paradise</p>
+    </footer>
+
+    <script src="/javascripts/main.js"></script>
+    
+</body>
+</html>

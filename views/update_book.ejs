@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book - Brainstorm Paradise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <header class="profile-header">
+        <div class="logo-container">
+            <img src="/images/brainstorm_logo.png" alt="Brainstorm Paradise Logo" class="logo-img">
+            <h1>Brainstorm Paradise</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Update Book</h2>
+        <form action="/admin/update/<%= id %>" method="POST">
+
+            <input type="hidden" name="id" value="{{ id }}">
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="<%= bookData.title %>">
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="<%= bookData.author %>">
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" value="<%= bookData.price %>">
+
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" name="image" placeholder=" Enter image URL" value="<%= bookData.image %>">
+
+            <label for="published_date">Published Date:</label>
+            <input type="text" id="published_date" name="published_date" placeholder="year-month-date"
+            value="<%= bookData.published_date %>">
+            
+            <label for="description">Description :</label>
+            <input type="text" id="description" name="description" value="<%= bookData.description %>">
+
+            <label for="category_id">Category:</label>
+            <select id="category_id" name="category_id">
+                <option value="1" <%=bookData.category_id===1 ? 'selected' : '' %>>Classics</option>
+                <option value="2" <%=bookData.category_id===2 ? 'selected' : '' %>>Dystopian</option>
+                <option value="3" <%=bookData.category_id===3 ? 'selected' : '' %>>Romance</option>
+                <option value="4" <%=bookData.category_id===4 ? 'selected' : '' %>>Literature</option>
+                <option value="5" <%=bookData.category_id===5 ? 'selected' : '' %>>Fantasy</option>
+                <option value="6" <%=bookData.category_id===6 ? 'selected' : '' %>>Adventure</option>
+                <option value="7" <%=bookData.category_id===7 ? 'selected' : '' %>>Thriller</option>
+            </select>
+
+            <button type="submit">Update Book</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Brainstorm Paradise</p>
+    </footer>
+
+    <script src="/javascripts/main.js"></script>
+</body>
+
+</html>

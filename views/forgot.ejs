@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Brainstorm Paradise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/images/brainstorm_logo.png" alt="Brainstorm Paradise Logo" class="logo-img">
+            <h1 class="logo-title">Brainstorm Paradise</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/auth/signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Forgot Password</h2>
+        <% if (message.length > 0) { %>
+            <div class="alert">
+                <%= message %>
+            </div>
+        <% } %>
+        <form action="/auth/forgot" method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit" class="btn">proceed</button>
+        </form>
+    </main>
+    <a href="/" class="btn btn-home">Go to Home</a>
+    <footer>
+        <p>&copy; 2023 Brainstorm Paradise</p>
+    </footer>
+
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>

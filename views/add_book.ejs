@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Book - Brainstorm Paradise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="profile-header">
+        <div class="logo-container">
+            <img src="/images/brainstorm_logo.png" alt="Brainstorm Paradise Logo" class="logo-img">
+            <h1 class="logo-title">Brainstorm Paradise</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Add new Book</h2>
+        <form action="/admin/add-book" method="POST"  enctype="multipart/form-data">
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+
+            <label for="actualimage">Upload Image:</label>
+            <input type="file" id="actualimage" name="actualimage" accept="image/*" required>
+
+            <label for="published_date">Published Date:</label>
+            <input type="text" id="published_date" name="published_date"  placeholder="year-month-date" required>
+             
+            <label for="description">Description :</label>
+            <input type="text" id="description" name="description"  placeholder="Give description..." required>
+
+            <label for="category_id">Category:</label>
+            <select id="category_id" name="category_id" required>
+                <option value="1" >Classics</option>
+                <option value="2" >Dystopian</option>
+                <option value="3" >Romance</option>
+                <option value="4" >Literature</option>
+                <option value="5" >Fantasy</option>
+                <option value="6" >Adventure</option>
+                <option value="7" >Thriller</option>
+            </select>
+
+            <button type="submit">Add Book</button>
+        </form>
+    </main>
+    <a href="/admin/all" class="btn btn-home">Admin Panel</a>
+    <footer>
+        <p>&copy; 2023 Brainstorm Paradise</p>
+    </footer>
+
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>

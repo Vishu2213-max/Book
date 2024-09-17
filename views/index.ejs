@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainstorm Paradise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        form button[type="submit"] {
+            width: 30%;
+            height: 100%;
+            padding: 2px;
+            background-color: #8da5c3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .message-circle {
+            width: 40px;
+            /* increased size */
+            height: 40px;
+            /* increased size */
+            border-radius: 50%;
+            background-color: #82134c;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            /* added margin */
+        }
+
+        .message-circle span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .banner-container {
+            width: 100%;
+            height: 500px;
+            /* adjust the height as needed */
+            background-image: url('/images/pic.jpg.png');
+            background-size: cover;
+            /* scale the image to fit the container */
+            background-position: center;
+            /* center the image */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* add a low opacity black background */
+            background-blend-mode: multiply;
+            animation: movingBackground 5s linear infinite  alternate;
+
+        }
+
+        @keyframes movingBackground {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            /* object-fit: cover; */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div style="display: flex;">
+                <div class="logo-container">
+                    <img src="/images/brainstorm_logo.png" alt="Brainstorm Paradise Logo" class="logo-img">
+                    <h1 class="logo-title">Brainstorm Paradise</h1>
+                </div>
+                <div class="auth-links">
+                    <% if (message==='' ) { %>
+                        <a href="/auth/login" class="btn-auth">Login</a>
+                        <a href="/auth/signup" class="btn-auth">Sign Up</a>
+                        <% } else { %>
+                            <a href="/auth/profile" class="message-circle">
+                                <span>
+                                    <%= message %>
+                                </span>
+                            </a>
+                            <% } %>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/books/all"><i class="fas fa-book" title="Books"></i></a></li>
+                    <li><a href="/cart/show"><i class="fas fa-shopping-cart" title="Cart"></i></a></li>
+                    <li><a href="/order/all"><i class="fas fa-list-alt" title="Orders"></i></a></li>
+                    <form class="search-form" action="/books/search" method="post">
+                        <input type="text" name="name" placeholder="book name..">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="banner-container">
+        <div class="banner-content">
+            <h1>Welcome to Brainstorm Paradise</h1>
+            <p>Discover new books, explore different genres, and get lost in the world of reading.</p>
+            <a href="/books/all">
+                <button>Explore Now</button>
+            </a>
+        </div>
+    </div>
+    <main class="container">
+        <!-- New Releases Section -->
+        <section>
+            <h2>New Releases</h2>
+            <div class="book-container">
+                <% newBooks.forEach(book=> { %>
+                    <div class="book-card">
+                        <img src="/images/<%= book.image %>" alt="<%= book.title %>" class="book-cover">
+                        <h3>
+                            <%= book.title %>
+                        </h3>
+                        <p>by <%= book.author %>
+                        </p>
+                        <a href="/books/<%= book.id %>" class="btn">View Details</a>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+
+        <!-- Bestsellers Section -->
+        <section>
+            <h2>Bestsellers</h2>
+            <div class="book-container">
+                <% bestsellers.forEach(book=> { %>
+                    <div class="book-card">
+                        <img src="/images/<%= book.image %>" alt="<%= book.title %>" class="book-cover">
+                        <h3>
+                            <%= book.title %>
+                        </h3>
+                        <p>by <%= book.author %>
+                        </p>
+                        <a href="/books/<%= book.id %>" class="btn">View Details</a>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section>
+            <h2>Categories</h2>
+            <div class="book-container">
+                <% categories.forEach(category=> { %>
+                    <div class="book-card">
+                        <h3>
+                            <%= category.name %>
+                        </h3>
+                        <a href="/books/categories/<%= category.id %>" class="btn">Explore</a>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Brainstorm Paradise</p>
+    </footer>
+
+    <script src="/javascripts/main.js"></script>
+</body>
+
+</html>

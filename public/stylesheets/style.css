@@ -1,0 +1,705 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.auth-links {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.btn-auth {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #4a6fa1;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-auth:hover {
+    background-color: #3a5780;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f7f8fa, #2960b2); /* Soft gradient */
+    color: #333;
+    line-height: 1.6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    flex-grow: 1;
+}
+
+.banner-container {
+    width: 100%;
+    height: 550px;
+    background-image: url('/images/pic.jpg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.banner-content {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.banner-content button {
+    background-color: #8da5c3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.banner-content button:hover {
+    background-color: #6c87a3;
+}
+
+/* Header */
+header {
+    background-color: #03244f; /* Muted blue */
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+header nav ul li{
+    width:auto;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    width:60px;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #3a5780; /* Darker blue on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #4a6fa1; /* Match header color */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    flex-shrink: 0;
+}
+
+/* Main Banner */
+.main-banner {
+    background-image: url('/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.main-banner h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Book Container */
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.book-card {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #e0e6ed; /* Light border */
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow on hover */
+}
+
+.book-cover {
+    width: 160px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.book-card h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #2c3e50; /* Darker text color */
+}
+
+.book-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.book-card .btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 10px;
+    background-color: #4a6fa1; /* Consistent button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.book-card .btn:hover {
+    background-color: #3a5780;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #4a6fa1; /* Consistent button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #3a5780;
+}
+
+/* Form Styles */
+/* General Form Styles */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"],
+form input[type="tel"],
+form input[type="submit"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; /* Consistent font size for inputs */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+.bb{
+    width: 100%; 
+}
+form button[type="submit"] {
+    width: 100%;
+    height: 40px;
+    padding: 2px;
+    background-color: #4a6fa1; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition for button color */
+}
+
+form button[type="submit"]:hover {
+    background-color: #3a5780; /* Darker shade on hover */
+}
+
+/* Additional Styling for Labels */
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Specific Styling for Select Dropdown */
+form select {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.profile-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 100px);
+    background: linear-gradient(to bottom right, #f7f8fa, #2960b2); /* Soft gradient */
+   
+    animation: fadeIn 1.5s ease;
+}
+
+.profile-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+    animation: scaleUp 0.8s ease;
+}
+
+.profile-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-text p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4a6fa1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #3a5780;
+}
+
+
+/* Cart Styles */
+.cart-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h4 {
+    margin-bottom: 5px;
+}
+
+.cart-item-details p {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.cart-item-details .cart-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cart-item-actions {
+    text-align: right;
+}
+
+.cart-item-actions .btn {
+    margin-left: 10px;
+}
+
+/* Checkout Styles */
+.checkout-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.checkout-summary {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-summary h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+.checkout-summary p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+.checkout-summary .total-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+
+/* Navigation Animation */
+header nav ul li a {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+    background-color: #3a5780;
+}
+
+/* Slide Animation */
+.slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Logo Styling */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Logo Image */
+.logo-img {
+    height: 60px;
+    width: 60px;
+    margin-right: 15px;
+}
+
+/* Logo Title */
+.logo-title {
+    font-family: 'Lobster', cursive;
+    font-size: 2.5rem;
+    color: #cbd6df;
+    margin: 0;
+    padding: 0;
+}
+
+/* Search Form Styling */
+.search-form {
+    width: 40%;
+    max-width: 600px;
+    height:40px;
+    margin: 0 ;
+    padding: 5px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f7f8fa;
+    display:flex
+}
+
+.search-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.search-form button {
+    width: 10%;
+    padding:0;
+    border: none;
+    border-radius: 4px;
+    background-color: #4a6fa1;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #3a5780;
+}
+
+/* Responsive Design */
+@media (max-width: 950px) {
+    /* Adjusting the auth-links for smaller screens */
+    .auth-links {
+        position: static; /* Remove absolute positioning */
+        margin-top: 10px;
+        justify-content: center; /* Center the buttons */
+        flex-direction: column; /* Stack the buttons vertically */
+        align-items: center;
+        gap: 15px; /* Increase space between buttons */
+    }
+
+    .btn-auth {
+        width: 80%; /* Make the buttons wider for better touch targets */
+        text-align: center;
+        padding: 12px 0; /* Adjust padding for larger touch area */
+    }
+
+    /* Centering and resizing the navigation links */
+    header nav ul {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    header nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* Adjust header title font size */
+    header h1 {
+        font-size: 24px; /* Decrease font size for smaller screens */
+    }
+
+    /* Adjusting the logo container */
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-links {
+        position: relative;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .auth-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        display: flex;           /* Ensure the list displays as a flex container */
+        flex-direction: row;      /* Make sure the items are arranged horizontally */
+        justify-content: center;  /* Center the navigation links */
+        gap: 10px;                /* Add some space between the links */
+        padding: 0;               /* Remove any padding */
+    }
+
+    header nav ul li {
+        display: inline-block;    /* Keep list items inline */
+        width: auto;              /* Ensure list items have auto width */
+    }
+
+    header nav ul li a {
+        padding: 8px 10px;        /* Adjust padding for smaller screens */
+        text-align: center;       /* Center the text within the links */
+        width: auto;              /* Ensure links have auto width */
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: row;
+    }
+
+    .search-form {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .book-card {
+        width: 100%;
+    }
+}
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom right, #f7f8fa, #2960b2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.admin-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.admin-option {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.admin-option:hover {
+    transform: scale(1.05);
+    background: #444;
+}
+
+.option-content h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    animation: slideInUp 1s ease-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.again{
+    background-color: #007bff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

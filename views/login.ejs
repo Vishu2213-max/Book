@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Brainstorm Paradise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        form a {
+            font-weight: bold;
+            flex: 1;
+            text-align: center;
+            margin: 0 10px;
+        }
+
+        form a:first-child {
+            font-size: 18px;
+            margin-left: 60px;
+            margin-right: 40px;
+        }
+
+        form a:nth-child(2) {
+            font-size: 18px;
+            margin-left: 40px;
+        }
+
+        form a[href="/admin/admin_log_in"] {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/images/brainstorm_logo.png" alt="Brainstorm Paradise Logo" class="logo-img">
+            <h1 class="logo-title">Brainstorm Paradise</h1>
+        </div>
+        <!-- <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/books/all">Books</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <main class="container">
+        <h2>Login</h2>
+        <% if (message.length> 0) { %>
+            <div class="alert">
+                <%= message %>
+            </div>
+            <% } %>
+                <form action="/auth/loginn" method="post">
+                    <a href="/auth/login">LOG IN</a>
+                    <a href="/admin/admin_log_in">ADMIN LOG IN</a>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit" class="btn">Login</button>
+                    <a href="/auth/forgot">Forgot password?</a>
+                </form>
+    </main>
+    <a href="/" class="btn btn-home">Go to Home</a>
+    <footer>
+        <p>&copy; 2023 Brainstorm Paradise</p>
+    </footer>
+
+    <script src="/javascripts/main.js"></script>
+</body>
+
+</html>

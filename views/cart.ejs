@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Brainstorm Paradise</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="/images/brainstorm_logo.png" alt="Brainstorm Paradise Logo" class="logo-img">
+            <h1 class="logo-title">Brainstorm Paradise</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/books/all">Books</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Your Cart</h2>
+        <div class="cart-container">
+            <% cartItems.forEach(book => { %>
+                <div class="cart-item">
+                    <img src="/images/<%= book.image %>" alt="<%= book.title %>" class="book-cover">
+                    <div class="cart-item-details">
+                        <h3><%= book.title %></h3>
+                        <p>by <%= book.author %></p>
+                        <p>$<%= book.price %></p>
+                       <p>Quantity: <%= book.quantity %></p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <div class="quantity-controls">
+                            <a href="/cart/decrease/<%= book.cart_id %>" class="btn btn-quantity">-</a>
+                            <span class="quantity-display"><%= book.quantity %></span>
+                            <a href="/cart/increase/<%= book.cart_id %>" class="btn btn-quantity">+</a>
+                          </div>
+                        <a href="/cart/remove/<%= book.cart_id %>" class="btn">Remove</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <div class="checkout-summary">
+            <h3>Order Summary</h3>
+            <p>Total Price: $<%= totalPrice %></p>
+            <a href="/cart/checkout" class="btn">Proceed to Checkout</a>
+        </div>
+    </main>
+    <a href="/" class="btn btn-home">Go to Home</a>
+    <footer>
+        <p>&copy; 2023 Brainstorm Paradise</p>
+    </footer>
+
+    <script src="/javascripts/main.js"></script>
+</body>
+</html>
